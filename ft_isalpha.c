@@ -5,3 +5,4 @@ int ft_isalpha(int a)
         return (1);
 	return (0);
 }
+//resto
