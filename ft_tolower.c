@@ -1,6 +1,5 @@
 
-//#include <stdio.h>
-//#include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

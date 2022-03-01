@@ -1,5 +1,4 @@
 
-#include <stdlib.h>
 #include "libft.h"
 
 // Procura palavra retorna indece de primeiro caracter da palavra caso ela existir ou -1;

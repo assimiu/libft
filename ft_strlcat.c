@@ -1,5 +1,5 @@
 
-#include <stdio.h>
+#include "libft.h"
 
 int	size_str(const char *str)
 {

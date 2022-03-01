@@ -1,6 +1,5 @@
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	strcounter(const char *str, char c)
 {

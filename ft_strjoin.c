@@ -1,6 +1,5 @@
 
 #include "libft.h"
-#include <stdlib.h>
 
 void f_join(char *dst, char const *s1, char const *s2)
 {
