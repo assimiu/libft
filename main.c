@@ -7,11 +7,8 @@
 
 int main()
 {
-    char *string = "      split       this for   me  !       ";
-    char **expected = ((char*[6]){"split", "this", "for", "me", "!", ((void *)0)});
-    char **result = ft_split(string, ' ');
+	char *i2 = ft_itoa(-2147483647);
 
-    printf("%s\n", result[5]);
+    printf("%s \n", i2);
     return 0;
 }
-

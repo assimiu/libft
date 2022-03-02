@@ -1,35 +1,28 @@
 
 
-int ft_atoi(char *a)
+int	ft_atoi(const char *str)
 {
-    int     valor;
-    int     sinal;
-    int     entr;
+	int			sinal;
+	long long	num;
 
-    valor = 0;
-    sinal = 1;
-    entr = 0;
-    if (a == 0)
-        return (0);
-    while (*a)
-    {
-        if (entr == 1 && (*a > '9' || *a < '0'))
-            return (valor * sinal);
-        if ((*a == '+' || *a == '-') && sinal == -1)
-            return (valor * sinal);
-        if (*a == '-')
-            sinal = -1;
-        if ((*a > '9' || *a < '0') && *a != '-' && *a != '+')
-                if (*a != '\t' && *a != '\n' && *a != ' ')
-                    if (*a != '\f' && *a != '\r' && *a != '\v')
-                        return (valor * sinal);
-        if (*a >= '0' && *a <= '9')
-        {
-            valor = (valor * 10) + (*a - 48);
-            entr = 1;
-        }
-        a ++;
-    }
-	return (valor * sinal);
+	sinal = 1;
+	num = 0;
+	while ((*str == 32) || (*str >= 9 && *str <= 13))
+		str++;
+    if (*str == '+')
+		str++;
+	if (*str == '-')
+	{
+		str++;
+        sinal *= -1;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		num = (num * 10) + (sinal * (*(str++) - '0'));
+		if (num > 2147483647)
+			return (-1);
+		if (num < -2147483648)
+			return (0);
+	}
+	return (num);
 }
-

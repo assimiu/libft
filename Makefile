@@ -24,7 +24,8 @@ FTS = ft_atoi.o\
 		 ft_strtrim.o\
 		 ft_isalpha.o\
 		 ft_substr.o\
-		 ft_split.o
+		 ft_split.o\
+		 ft_itoa.o
 
 CC = cc 
 
