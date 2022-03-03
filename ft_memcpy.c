@@ -23,10 +23,7 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	len = 0;
 	if (!cp_str1 && !cp_str2)
 		return (0);
-	while (len < n && *cp_str2 != 0)
-	{
+	while (len ++ < n)
 		*cp_str1++ = *cp_str2 ++;
-		len ++;
-	}
 	return (dst);
 }

@@ -24,29 +24,28 @@ static int	contador(int nun)
 
 char	*ft_itoa(int n)
 {
-	size_t		i;
-	char		*itoa;
+	char	*res;
+	size_t	len;
 
-	i = contador(n);
-	itoa = (char *) malloc((i + 1) * sizeof(char));
-	if (!itoa)
-		return (0);
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	itoa[0] = '0';
-	itoa[i--] = 0;
-	if (n < 0)
+	len = contador(n);
+	res = (char *)malloc(len + 1 * sizeof(char));
+	if (!res)
+		return (0);
+	res[len --] = '\0';
+	if (n == 0)
+		res[0] = '0';
+	else if (n < 0)
 	{
-		n = n * (-1);
-		itoa[0] = '-';
+		res[0] = '-';
+		n = n * -1;
 	}
-	else
+	while (n > 0)
 	{
-		while (n != 0)
-		{
-			itoa[i --] = (n % 10) + 48;
-			n = n / 10;
-		}
+		res[len] = (n % 10) + '0';
+		n = n / 10;
+		len--;
 	}
-	return (itoa);
+	return (res);
 }
