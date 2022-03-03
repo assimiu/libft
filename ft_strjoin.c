@@ -1,23 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 16:09:47 by amane             #+#    #+#             */
+/*   Updated: 2022/03/02 16:12:43 by amane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void f_join(char *dst, char const *s1, char const *s2)
+void	f_join(char *dst, char const *s1, char const *s2)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while ((dst[i] = *s1 ++))
+	while (*s1 != 0)
+	{
+		dst[i] = *s1;
+		s1 ++;
 		i ++;
-	while ((dst[i] = *s2 ++))
+	}
+	while (*s2 != 0)
+	{
+		dst[i] = *s2;
 		i ++;
+		s2 ++;
+	}
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t size_s1;
-	size_t size_s2;
-	size_t size_total;
+	size_t	size_s1;
+	size_t	size_s2;
+	size_t	size_total;
 	char	*join;
 
 	if (!s1 || !s2)

@@ -1,23 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 15:53:11 by amane             #+#    #+#             */
+/*   Updated: 2022/03/02 17:08:18 by amane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-
-char *ft_strnstr(const char *s, const char *find, size_t slen)
+char	*ft_strnstr(const char *s, const char *find, size_t slen)
 {
-	char c, sc;
-	size_t len;
+	char	c;
+	char	*sc;
+	size_t	len;
 
-	if ((c = *find++) != '\0') {
-		len = ft_strlen(find);
-		do {
-			do {
-				if ((sc = *s++) == '\0' || slen-- < 1)
-					return (NULL);
-			} while (sc != c);
-			if (len > slen)
-				return (NULL);
-		} while (ft_strncmp(s, find, len) != 0);
-		s--;
+	len = ft_strlen(find);
+	sc = (char *) s;
+	while (*sc != 0)
+	{
+		if (ft_strncmp(sc, find, len) == 0)
+			return (sc);
+		sc ++;
 	}
-	return ((char *)s);
+	return (0);
 }

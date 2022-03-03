@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 15:53:37 by amane             #+#    #+#             */
+/*   Updated: 2022/03/02 15:54:07 by amane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-// Procura palavra retorna indece de primeiro caracter da palavra caso ela existir ou -1;
-char		*ft_strtrim(char const *s1, char const *set)
+// Procura palavra retorna indece de primeiro caracter da
+//palavra caso ela existir ou -1;
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 

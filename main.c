@@ -7,7 +7,7 @@
 
 int main()
 {
-	char *i2 = ft_itoa(-2147483647);
+	char *i2 = ft_strnstr("ola mund de prgramaca", "", 100);
 
     printf("%s \n", i2);
     return 0;

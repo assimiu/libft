@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 15:38:27 by amane             #+#    #+#             */
+/*   Updated: 2022/03/02 15:39:01 by amane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	strcounter(const char *str, char c)
 {
@@ -22,7 +32,7 @@ static int	strcounter(const char *str, char c)
 	return (counter);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**new;
 	int		i;

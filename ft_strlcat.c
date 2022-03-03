@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/02 15:48:55 by amane             #+#    #+#             */
+/*   Updated: 2022/03/02 16:13:49 by amane            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	size_str(const char *str)
+static int	size_str(const char *str)
 {
 	unsigned int		pos;
 
@@ -10,7 +21,6 @@ int	size_str(const char *str)
 		pos ++;
 	return (pos);
 }
-
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
