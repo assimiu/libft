@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 15:15:46 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 16:25:09 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	char	*str;
+	size_t	i;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	i = 0;
+	str = (char *) malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!s || !str)
+		return (0);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i ++;
+	}
+	return (str);
 }

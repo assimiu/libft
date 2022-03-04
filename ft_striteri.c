@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 16:29:05 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 17:04:55 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	size_t		i;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		f(i, s);
+		i ++;
+	}
 }

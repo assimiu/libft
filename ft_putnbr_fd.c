@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 17:27:00 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 17:44:25 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	char	c;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	if (n >= 0 && n <= 9)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }

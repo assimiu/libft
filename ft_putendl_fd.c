@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 17:20:56 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 17:25:25 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	char	i;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	i = '\n';
+	write (fd, s, ft_strlen(s));
+	write (fd, &i, 1);
 }

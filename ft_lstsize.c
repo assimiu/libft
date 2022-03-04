@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 18:07:01 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 18:21:16 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	int		r;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	r = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		r ++;
+	}
+	return (r);
 }

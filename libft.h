@@ -6,7 +6,7 @@
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:57:57 by amane             #+#    #+#             */
-/*   Updated: 2022/03/02 16:36:25 by amane            ###   ########.fr       */
+/*   Updated: 2022/03/04 17:49:14 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+//Parte bonus
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 #endif

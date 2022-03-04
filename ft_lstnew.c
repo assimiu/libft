@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amane <amane@studente.42lisboa.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 16:01:11 by amane             #+#    #+#             */
-/*   Updated: 2022/03/04 17:47:33 by amane            ###   ########.fr       */
+/*   Created: 2022/03/04 17:49:44 by amane             #+#    #+#             */
+/*   Updated: 2022/03/04 17:54:39 by amane            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
-#include <ctype.h>
-#include <stdlib.h>
 
-char	f(unsigned int i, char c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
-}
+	t_list	*new;
 
-int	main(void)
-{
-	ft_putnbr_fd(0, 1);
-	return (0);
+	new = (t_list *) malloc(sizeof(t_list));
+	if (!new)
+		return (0);
+	new->content = content;
+	new->next = 0;
+	return (new);
 }
