@@ -37,8 +37,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_src = 0;
 	size_dest = size_str(apt_dst);
 	size_src = size_str(src);
-	if (size <= size_dest)
-		size_src += size;
+	if (size < size_dest)
+		return (size_src + size);
 	else
 		size_src += size_dest;
 	while (src[pos] != 0 && (size_dest + 1) < size)
