@@ -9,8 +9,9 @@ FTS=ft_atoi.o ft_bzero.o ft_calloc.o\
 	ft_isalpha.o ft_substr.o ft_split.o\
 	ft_itoa.o ft_strmapi.o ft_striteri.o\
 	ft_putchar_fd.o ft_putnbr_fd.o ft_putstr_fd.o\
-	ft_putendl_fd.o\
-	ft_putnbr_fd.o ft_lstclear.o ft_lstdelone.o\
+	ft_putendl_fd.o ft_putnbr_fd.o 
+
+BONUS_O = ft_lstclear.o ft_lstdelone.o\
 	ft_lstlast.o ft_lstadd_back.o ft_lstadd_front.o\
 	ft_lstnew.o ft_lstsize.o ft_lstiter.o\
 	ft_lstmap.o
@@ -37,6 +38,7 @@ fclean: clean
 
 re: fclean all
 
-a:
-	gcc main.c libft.a -o main.o && ./main.o
+bonus: all $(BONUS_O)
+	ar -rcs $(NAME) $(BONUS_O)
 
+rebonus: fclean bonus
