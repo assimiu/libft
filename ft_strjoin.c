@@ -12,40 +12,30 @@
 
 #include "libft.h"
 
-static void	f_join(char *dst, char const *s1, char const *s2)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s1 != 0)
-	{
-		dst[i] = *s1;
-		s1 ++;
-		i ++;
-	}
-	while (*s2 != 0)
-	{
-		dst[i] = *s2;
-		i ++;
-		s2 ++;
-	}
-	dst[i] = 0;
-}
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	size_s1;
-	size_t	size_s2;
-	size_t	size_total;
-	char	*join;
+	char	*new;
+	int		i;
+	int		j;
 
 	if (!s1 || !s2)
 		return (0);
-	size_s1 = ft_strlen(s1);
-	size_s2 = ft_strlen(s2);
-	join = (char *) malloc(sizeof(char) * (size_s1 + size_s2 + 1));
-	if (!join)
+	new = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!new)
 		return (0);
-	f_join(join, s1, s2);
-	return (join);
+	i = 0;
+	j = 0;
+	while (s1[i])
+	{
+		new[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		new[i] = s2[j];
+		j++;
+		i++;
+	}
+	new[i] = 0;
+	return (new);
 }
